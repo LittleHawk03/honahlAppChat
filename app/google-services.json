@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "372180115433",
+    "project_id": "kma-app-chat-project",
+    "storage_bucket": "kma-app-chat-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372180115433:android:7c19ae89cb67a474daf578",
+        "android_client_info": {
+          "package_name": "com.example.honahlappchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372180115433-dklmddocrnoq2ko55c0lnfvj4n9fktp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvU58GhifNob1KAfEr4C5sPYfXzUwx3rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372180115433-dklmddocrnoq2ko55c0lnfvj4n9fktp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
