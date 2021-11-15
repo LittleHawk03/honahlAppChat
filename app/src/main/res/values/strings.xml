@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">honahlAppChat</string>
+    <string name="app_name">HonahlAppChat</string>
+    <string name="welcome">HELLO THERE, WELCOME TO KMA</string>
+    <string name="loginToContinue">Login to continue</string>
+    <string name="RegisterNewAccount">Register New Account</string>
+    <string name="AddPhoto">Add Photo</string>
 </resources>
