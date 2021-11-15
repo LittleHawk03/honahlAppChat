@@ -68,7 +68,7 @@
                 android:id="@+id/RegisterInputName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:textColor="@color/black"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +92,7 @@
                 android:id="@+id/InputEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:textColor="@color/black"/>
 
         </com.google.android.material.textfield.TextInputLayout>
