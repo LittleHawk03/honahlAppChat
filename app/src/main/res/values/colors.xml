@@ -10,4 +10,6 @@
     <color name="aliceblue">#f0f8ff</color>
     <color name="silver">#c0c0c0</color>
     <color name="gainsboro">#dcdcdc</color>
+    <color name="lightgrey">#d3d3d3</color>
+
 </resources>

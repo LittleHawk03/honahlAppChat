@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -41,8 +42,23 @@ public class SignInActivity extends AppCompatActivity {
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.ImageView.setImageResource(R.drawable.madc);
+
+        statuscolor();
         SetListeners();
 
+    }
+
+    private void statuscolor()
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.gainsboro,this.getTheme()));
+        }
+        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.gainsboro,this.getTheme()));
+        }
     }
 
     private void SetListeners() {
