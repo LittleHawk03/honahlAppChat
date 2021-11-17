@@ -6,28 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
+
+
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageProfile"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_25sdp"
         android:background="@drawable/shape_image"/>
 
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_240sdp"
-        android:background="@drawable/shape_image"
-        android:padding="@dimen/_6sdp"
-        android:src="@drawable/ic_logout"
-        android:tint="@color/black"/>
+    <FrameLayout
+        android:layout_width="317dp"
+        android:layout_height="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/SignOutButton"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_190sdp"
+            android:background="@drawable/shape_image"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/ic_logout"
+            android:tint="@color/black" />
+
+        <ProgressBar
+            android:id="@+id/ProgressBar"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_190sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+
 
 
 
