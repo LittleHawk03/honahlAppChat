@@ -8,6 +8,7 @@
     android:overScrollMode="never"
     android:padding="@dimen/_24sdp"
     android:scrollbars="none"
+    android:background="@drawable/backgound1"
     tools:context=".Activity.SignUpActivity">
 
     <LinearLayout
@@ -22,7 +23,7 @@
             android:layout_marginTop="@dimen/_40sdp"
             android:text="@string/RegisterNewAccount"
             android:textSize="@dimen/_13sdp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:fontFamily="@font/bungee"/>
 
@@ -50,18 +51,17 @@
         </FrameLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
-            app:boxStrokeColor="@color/black"
             app:hintAnimationEnabled="true"
-            app:boxBackgroundColor="@color/gainsboro"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             android:hint="name">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -69,18 +69,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
             app:boxStrokeColor="@color/black"
             app:hintAnimationEnabled="true"
-            app:boxBackgroundColor="@color/gainsboro"
+            android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
@@ -93,25 +93,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
             app:boxStrokeColor="@color/black"
             app:hintAnimationEnabled="true"
-            app:boxBackgroundColor="@color/gainsboro"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
+            android:textColorHint="@color/white"
             app:hintTextColor="@color/black"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/black"
+            app:passwordToggleTint="@color/white"
             android:hint="Password">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -119,18 +119,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
+            android:textColorHint="@color/white"
             app:boxStrokeColor="@color/black"
             app:hintAnimationEnabled="true"
-            app:boxBackgroundColor="@color/gainsboro"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
@@ -143,7 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,7 +178,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:text="sign in"
             android:textSize="@dimen/_14ssp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"/>
 
     </LinearLayout>

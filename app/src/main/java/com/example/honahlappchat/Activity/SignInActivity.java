@@ -13,11 +13,11 @@ import android.widget.Toast;
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
+
 import com.example.honahlappchat.databinding.ActivitySignInBinding;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class SignInActivity extends AppCompatActivity {
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.ImageView.setImageResource(R.drawable.madc);
+//        binding.ImageView.setImageResource(R.drawable.madc);
 
         statuscolor();
         SetListeners();
@@ -53,11 +53,11 @@ public class SignInActivity extends AppCompatActivity {
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.gainsboro,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.cornflowerblue,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.gainsboro,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.cornflowerblue,this.getTheme()));
         }
     }
 
