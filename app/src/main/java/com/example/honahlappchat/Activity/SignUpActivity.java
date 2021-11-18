@@ -1,6 +1,5 @@
 package com.example.honahlappchat.Activity;
 
-import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +15,11 @@ import android.util.Base64;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
-
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
 import com.example.honahlappchat.databinding.ActivitySignUpBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -54,11 +51,11 @@ public class SignUpActivity extends AppCompatActivity {
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.cornflowerblue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.cornflowerblue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
         }
     }
 
@@ -155,7 +152,7 @@ public class SignUpActivity extends AppCompatActivity {
         }else if(binding.InputConfirmPassWord.getText().toString().trim().isEmpty()){
             showToast("you must confirm your password ");
             return false;
-//        }else if (binding.InputConfirmPassWord.getText().toString().trim().equals(binding.InputPassWord.getText().toString())){
+//        }else if (binding.InputPassWord.getText().toString().trim().equals(binding.InputConfirmPassWord.getText().toString())){
 //            showToast(" confirm password is incorrect ");
 //            return false;
         }else {

@@ -8,7 +8,7 @@
     android:overScrollMode="never"
     android:padding="@dimen/_24sdp"
     android:scrollbars="none"
-    android:background="@drawable/backgound1"
+    android:background="@drawable/background1"
     tools:context=".Activity.SignInActivity">
 
 
@@ -51,11 +51,12 @@
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_50sdp"
             android:hint="username or email"
-            android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             app:hintAnimationEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -73,15 +74,16 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
-            app:boxStrokeColor="@color/white"
-            app:hintAnimationEnabled="true"
+
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
+            app:hintAnimationEnabled="true"
             android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
             android:hint="password">
 
             <com.google.android.material.textfield.TextInputEditText

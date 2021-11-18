@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         preferenceManager = new PreferenceManager(getApplicationContext());
         dialog = new Dialog(this);
         LoadPicture();
-        statuscolor();
         SetListeners();
+        statusColor();
     }
 
     private void SetListeners(){
@@ -52,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void statuscolor()
+    private void statusColor()
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.darkGrey,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.DodgerBlue,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.darkGrey,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.DodgerBlue,this.getTheme()));
         }
     }
 

@@ -8,7 +8,7 @@
     android:overScrollMode="never"
     android:padding="@dimen/_24sdp"
     android:scrollbars="none"
-    android:background="@drawable/backgound1"
+    android:background="@drawable/background1"
     tools:context=".Activity.SignUpActivity">
 
     <LinearLayout
@@ -78,14 +78,13 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
-            app:boxStrokeColor="@color/black"
             app:hintAnimationEnabled="true"
-            android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
-            app:hintTextColor="@color/black"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
             android:hint="Email or username">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -102,14 +101,13 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
-            app:boxStrokeColor="@color/black"
             app:hintAnimationEnabled="true"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
             android:textColorHint="@color/white"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="@color/white"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/white"
             android:hint="Password">
@@ -128,14 +126,13 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/black"
-            app:hintAnimationEnabled="true"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:hintAnimationEnabled="true"
             android:hint="Confirm Password">
 
             <com.google.android.material.textfield.TextInputEditText

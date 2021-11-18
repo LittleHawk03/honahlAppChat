@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e90ff"
+    android:background="@color/DodgerBlue"
     tools:context=".Activity.MainActivity">
 
 
@@ -14,11 +14,15 @@
         android:id="@+id/imageProfile"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/_15sdp"
-        android:background="@drawable/avt_image"/>
+        android:scaleType="centerCrop"
+        android:background="@drawable/shape_image"
+        app:riv_corner_radius="@dimen/_150sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
 
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -26,10 +30,10 @@
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginLeft="@dimen/_260sdp"
-        android:background="@drawable/avt_image"
+        android:background="@drawable/shape_image"
         android:layout_marginTop="@dimen/_10sdp"
         android:padding="@dimen/_6sdp"
-        android:src="@drawable/ic_logout"
+        android:src="@drawable/power2"
         android:tint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
