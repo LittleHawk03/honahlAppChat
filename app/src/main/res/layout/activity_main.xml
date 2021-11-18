@@ -22,7 +22,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -30,8 +40,8 @@
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginLeft="@dimen/_260sdp"
-        android:background="@drawable/shape_image"
         android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/shape_image"
         android:padding="@dimen/_6sdp"
         android:src="@drawable/power2"
         android:tint="@color/black"

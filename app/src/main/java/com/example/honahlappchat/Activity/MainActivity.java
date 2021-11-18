@@ -13,17 +13,17 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
-import com.example.honahlappchat.databinding.ActivityMainBinding;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
+import com.example.honahlappchat.databinding.ActivityMainBinding;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         preferenceManager = new PreferenceManager(getApplicationContext());
         dialog = new Dialog(this);
-        LoadPicture();
-        SetListeners();
+        LoadProfile();
         statusColor();
+        SetListeners();
     }
 
     private void SetListeners(){
@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.DodgerBlue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.DodgerBlue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
         }
     }
 
@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-    private void LoadPicture(){
+    private void LoadProfile(){
+        binding.textView.setText(preferenceManager.getString(Constants.KEY_NAME));
         byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE),Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
         binding.imageProfile.setImageBitmap(bitmap);

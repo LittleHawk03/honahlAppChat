@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
@@ -42,13 +43,17 @@ public class SignUpActivity extends AppCompatActivity {
         preferenceManager = new PreferenceManager(getApplicationContext());
 
 
-        statuscolor();
+        statusColor();
         SetListener();
 
     }
 
-    private void statuscolor()
+    private void statusColor()
     {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
             getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));

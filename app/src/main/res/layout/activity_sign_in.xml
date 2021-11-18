@@ -16,6 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -108,7 +109,8 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:text="sign in"
                 android:textStyle="bold"
-                android:backgroundTint="@color/black"
+                android:textColor="@color/cornFlowerBlue"
+                android:backgroundTint="@color/white"
                 app:cornerRadius="@dimen/_8sdp"/>
 
             <ProgressBar

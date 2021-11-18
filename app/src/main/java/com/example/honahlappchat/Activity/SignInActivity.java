@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.honahlappchat.R;
@@ -41,14 +42,14 @@ public class SignInActivity extends AppCompatActivity {
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        binding.ImageView.setImageResource(R.drawable.madc);
 
-        statuscolor();
+
+        statusColor();
         SetListeners();
 
     }
 
-    private void statuscolor()
+     private void statusColor()
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
