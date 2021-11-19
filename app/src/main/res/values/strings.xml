@@ -4,4 +4,6 @@
     <string name="loginToContinue">Login to continue</string>
     <string name="RegisterNewAccount">Register New Account</string>
     <string name="AddPhoto">Add Photo</string>
+    <string name="OceanWave">OceanWave</string>
+    <string name="SignOut">Sign Out</string>
 </resources>

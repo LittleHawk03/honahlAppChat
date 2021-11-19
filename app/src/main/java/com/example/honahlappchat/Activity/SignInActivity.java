@@ -53,11 +53,11 @@ public class SignInActivity extends AppCompatActivity {
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
         }
     }
 
@@ -84,6 +84,7 @@ public class SignInActivity extends AppCompatActivity {
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNS_IN,true);
                         preferenceManager.putString(Constants.KEY_USER_ID,documentSnapshot.getId());
+                        preferenceManager.putString(Constants.KEY_EMAIL,documentSnapshot.getString(Constants.KEY_EMAIL));
                         preferenceManager.putString(Constants.KEY_NAME,documentSnapshot.getString(Constants.KEY_NAME));
                         preferenceManager.putString(Constants.KEY_IMAGE,documentSnapshot.getString(Constants.KEY_IMAGE));
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -109,7 +110,6 @@ public class SignInActivity extends AppCompatActivity {
            showToast("password cant be empty");
            return false;
        }else{
-           showToast("???????");
            return true;
        }
 

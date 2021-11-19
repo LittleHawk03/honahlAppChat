@@ -154,8 +154,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:text="sign up"
+                android:textColor="@color/cornFlowerBlue"
                 android:textStyle="bold"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/white"
                 app:cornerRadius="@dimen/_8sdp"/>
             <ProgressBar
                 android:id="@+id/ProgressBar"

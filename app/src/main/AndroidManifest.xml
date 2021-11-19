@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.honahlappchat">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HonahlAppChat">
+        <activity
+            android:name=".Activity.userAcivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Account"
+            android:exported="true" />
         <activity
             android:name=".Activity.SignUpActivity"
             android:exported="true"
@@ -34,10 +40,9 @@
             android:name=".FireBase.MessagingService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

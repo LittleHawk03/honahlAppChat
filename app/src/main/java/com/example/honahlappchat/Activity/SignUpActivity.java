@@ -50,17 +50,14 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void statusColor()
     {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.cornFlowerBlue,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
         }
     }
 
@@ -145,7 +142,7 @@ public class SignUpActivity extends AppCompatActivity {
         if (encodeImage == null){
             showToast("select photo");
             return false;
-        }else if (binding.RegisterInputName.getText().toString().trim().isEmpty()){
+        } else if (binding.RegisterInputName.getText().toString().trim().isEmpty()){
             showToast("Name cant be empty");
             return false;
         }else if (binding.InputEmail.getText().toString().trim().isEmpty()){
