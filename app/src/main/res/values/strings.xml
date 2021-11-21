@@ -8,4 +8,6 @@
     <string name="SignOut">Sign Out</string>
     <string name="Setting">Setting</string>
     <string name="type_a_message">Type a message</string>
+    <string name="name">Name :</string>
+    <string name="username">Username :</string>
 </resources>

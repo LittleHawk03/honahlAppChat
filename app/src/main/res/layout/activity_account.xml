@@ -61,7 +61,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/_5sdp"
-        android:background="@drawable/shape_select"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -69,51 +68,77 @@
             android:id="@+id/imageAvt"
             android:layout_width="@dimen/_70sdp"
             android:layout_height="@dimen/_70sdp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/shape_avt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:riv_corner_radius="@dimen/_400sdp" />
+
+        <View
+            android:id="@+id/ViewSuppoterPicture"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toEndOf="@+id/imageAvt"
+            app:layout_constraintTop_toTopOf="@+id/imageAvt"
+            app:layout_constraintBottom_toBottomOf="@+id/imageAvt"/>
+
+        <TextView
+            android:id="@+id/textNameSuppoter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@string/name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ViewSuppoterPicture"
+            app:layout_constraintBottom_toTopOf="@+id/ViewSuppoterPicture"/>
 
         <TextView
             android:id="@+id/OutputTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:textColor="@color/black"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageAvt" />
+            app:layout_constraintStart_toEndOf="@+id/textNameSuppoter"
+            app:layout_constraintTop_toTopOf="@+id/textNameSuppoter"
+             app:layout_constraintBottom_toBottomOf="@+id/textNameSuppoter"/>
+
+        <TextView
+            android:id="@+id/textUserSuppoter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
+            android:text="@string/username"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ViewSuppoterPicture"
+            app:layout_constraintTop_toBottomOf="@+id/textNameSuppoter"/>
 
         <TextView
             android:id="@+id/OutPutUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:textColor="@color/black"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_12ssp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/OutputTextName" />
+            app:layout_constraintStart_toEndOf="@+id/textUserSuppoter"
+            app:layout_constraintTop_toTopOf="@+id/textUserSuppoter"
+            app:layout_constraintBottom_toBottomOf="@+id/textUserSuppoter"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/SignOutFrame"
-
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:outlineAmbientShadowColor="@color/black"
-        android:background="@drawable/shape_select">
+        android:outlineAmbientShadowColor="@color/black">
 
         <ImageView
             android:layout_width="@dimen/_30sdp"

@@ -13,15 +13,15 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
+
 import android.widget.Button;
 
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
 import com.example.honahlappchat.databinding.ActivityAccountBinding;
-import com.example.honahlappchat.databinding.ActivityMainBinding;
-import com.example.honahlappchat.databinding.SignoutDialogBinding;
+
+
 
 public class Account extends AppCompatActivity {
 
