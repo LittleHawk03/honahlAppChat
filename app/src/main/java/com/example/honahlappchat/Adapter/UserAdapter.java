@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.honahlappchat.Listener.Userlistener;
 import com.example.honahlappchat.databinding.ItemUserBinding;
 import com.example.honahlappchat.models.UsersM;
 
@@ -17,9 +18,11 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
 
     private final List<UsersM> users;
+    private final Userlistener userlistener;
 
-    public UserAdapter(List<UsersM> users) {
+    public UserAdapter(List<UsersM> users, Userlistener userlistener) {
         this.users = users;
+        this.userlistener = userlistener;
     }
 
 
@@ -58,6 +61,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             binding.TextName.setText(users.name);
             binding.textEmail.setText(users.email);
             binding.imageProfile.setImageBitmap(getImage(users.image));
+            binding.getRoot().setOnClickListener(v -> userlistener.onUsetClicked(users));
         }
     }
 

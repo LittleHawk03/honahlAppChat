@@ -2,12 +2,14 @@ package com.example.honahlappchat.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
 import com.example.honahlappchat.Adapter.UserAdapter;
+import com.example.honahlappchat.Listener.Userlistener;
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
@@ -19,7 +21,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class userAcivity extends AppCompatActivity {
+public class userAcivity extends AppCompatActivity implements Userlistener {
 
     private ActivityUserAcivityBinding binding;
     private PreferenceManager preferenceManager;
@@ -83,11 +85,12 @@ public class userAcivity extends AppCompatActivity {
                            usersM.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
                            usersM.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
                            usersM.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
+                           usersM.id = queryDocumentSnapshot.getId();
                            users.add(usersM);
 
                        }
                        if (users.size() > 0){
-                           UserAdapter userAdapter = new UserAdapter(users);
+                           UserAdapter userAdapter = new UserAdapter(users,this);
                            binding.usersRecycleView.setAdapter(userAdapter);
                            binding.usersRecycleView.setVisibility(View.VISIBLE);
                        }else {
@@ -113,5 +116,13 @@ public class userAcivity extends AppCompatActivity {
         }else {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onUsetClicked(UsersM users) {
+        Intent intent = new Intent(getApplicationContext(),activity_chat.class);
+        intent.putExtra(Constants.KEY_USER,users);
+        startActivity(intent);
+        finish();
     }
 }

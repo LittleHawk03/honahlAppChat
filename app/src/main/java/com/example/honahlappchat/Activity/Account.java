@@ -65,11 +65,11 @@ public class Account extends AppCompatActivity {
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.MainStatus,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.gainsBoro,this.getTheme()));
         }
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.MainStatus,this.getTheme()));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.gainsBoro,this.getTheme()));
         }
     }
 
@@ -84,15 +84,12 @@ public class Account extends AppCompatActivity {
 
     private void setListener(){
 
-
-
         binding.ButtonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish();
             }
         });
 

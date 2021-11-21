@@ -8,12 +8,14 @@
     android:background="@drawable/background2"
     tools:context=".Activity.MainActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearlayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,35 +23,55 @@
             android:id="@+id/imageProfile"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_marginVertical="@dimen/_10sdp"
-            android:contentDescription="@string/OceanWave"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
             android:background="@drawable/shape_image"
+            android:contentDescription="@string/OceanWave"
             android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:riv_corner_radius="@dimen/_150sdp" />
+
+        <View
+            android:id="@+id/supportView"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageProfile"
+            app:layout_constraintStart_toEndOf="@+id/imageProfile"
+            app:layout_constraintTop_toTopOf="@+id/imageProfile" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="4dp"
             android:text="@string/OceanWave"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/supportView"
+            app:layout_constraintBottom_toBottomOf="@+id/supportView"
+            app:layout_constraintStart_toEndOf="@+id/supportView"/>
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/SignOutButton"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginHorizontal="@dimen/_130sdp"
-            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/shape_image"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/power2"
-            android:tint="@color/black" />
+            android:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteY="7dp" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.example.honahlappchat.models;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class UsersM implements Serializable {
 
@@ -8,4 +9,6 @@ public class UsersM implements Serializable {
     public String image;
     public String email;
     public String token;
+    public String id;
+
 }

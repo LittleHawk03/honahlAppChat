@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.216796875" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/avt_image.xml" value="0.19583333333333333" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/backgrouf_for_chat_secren.xml" value="0.216796875" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/background_content_button.xml" value="0.19054054054054054" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.165234375" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.19583333333333333" />
@@ -12,20 +13,27 @@
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/ic_logout.xml" value="0.216796875" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/ic_seclect_user.xml" value="0.165234375" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/ic_select_user.xml" value="0.165234375" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shap_for_reciving.xml" value="0.19072164948453607" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shap_image.xml" value="0.13914473684210527" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shape_avt.xml" value="0.19583333333333333" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shape_dialog.xml" value="0.1825657894736842" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shape_for_sending.xml" value="0.19270833333333334" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shape_image.xml" value="0.216796875" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shape_select.xml" value="0.19583333333333333" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/drawable/shape_send.xml" value="0.165234375" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/font/bungee(1).xml" value="0.1" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/font/bungee.xml" value="0.1" />
-        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_account.xml" value="0.21" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_account.xml" value="0.14" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_chat.xml" value="0.20390625" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_messaging_service.xml" value="0.15300546448087432" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_sign_in.xml" value="0.15" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_sign_up.xml" value="0.18" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_user_acivity.xml" value="0.18" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/item_container_receiver.xml" value="0.18194444444444444" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/item_container_sendchat.xml" value="0.18194444444444444" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/item_user.xml" value="0.25105189340813466" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/iten_container_chat.xml" value="0.18194444444444444" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/signout_dialog.xml" value="0.2046875" />
       </map>
     </option>

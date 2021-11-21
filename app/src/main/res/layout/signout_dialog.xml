@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/_280sdp"
-    android:layout_height="@dimen/_280sdp"
+    android:layout_height="@dimen/_260sdp"
     android:background="@color/trans"
     android:layout_gravity="center"
     app:layout_constraintCircleRadius="@dimen/_20sdp">
@@ -43,30 +43,33 @@
                 android:layout_marginEnd="140dp"
                 android:src="@drawable/power2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.979"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ButtonSignOut"
                 android:layout_width="144dp"
                 android:layout_height="49dp"
-                android:layout_marginTop="296dp"
-                android:layout_marginEnd="204dp"
+                android:layout_marginTop="244dp"
                 android:text="Sign out"
                 app:backgroundTint="@color/black"
                 app:cornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintEnd_toStartOf="@+id/ButtonCancel"
+                app:layout_constraintHorizontal_bias="0.333"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ButtonCancel"
                 android:layout_width="144dp"
                 android:layout_height="49dp"
-                android:layout_marginTop="296dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="244dp"
+                android:layout_marginEnd="28dp"
                 android:text="cancel"
                 app:backgroundTint="@color/black"
                 app:cornerRadius="@dimen/_10sdp"
-
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

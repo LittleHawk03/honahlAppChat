@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private PreferenceManager preferenceManager;
     private Dialog dialog;
+    private SignoutDialogBinding dialogBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,21 +129,16 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.signout_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+
         Button buttonSignOut = dialog.findViewById(R.id.ButtonSignOut);
         Button buttonCancel = dialog.findViewById(R.id.ButtonCancel);
 
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
+        buttonCancel.setOnClickListener(v -> {
+            dialog.dismiss();
         });
 
-        buttonSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LogOut();
-            }
+        buttonSignOut.setOnClickListener(v -> {
+            LogOut();
         });
 
         dialog.show();

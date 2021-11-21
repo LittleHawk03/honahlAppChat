@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HonahlAppChat">
         <activity
+            android:name=".Activity.activity_chat"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".Activity.userAcivity"
             android:exported="true" />
         <activity
