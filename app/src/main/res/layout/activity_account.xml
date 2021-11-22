@@ -55,14 +55,16 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/darkGrey"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profileFrame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/_5sdp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:gravity="center">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageAvt"
@@ -134,17 +136,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"/>
+
     <FrameLayout
         android:id="@+id/SignOutFrame"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_4sdp"
         android:outlineAmbientShadowColor="@color/black">
 
         <ImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
-           android:layout_gravity="center_vertical"
+             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_baseline_power_settings_new_24" />
 
         <TextView

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.honahlappchat.Adapter.RecentConversationAdapte;
@@ -205,15 +206,18 @@ public class MainActivity extends AppCompatActivity implements ConversionListene
     private void Dialog(){
 
 
-        dialog.setContentView(dialogBinding.getRoot());
+        dialog.setContentView(R.layout.signout_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
 
-        dialogBinding.ButtonCancel.setOnClickListener(v -> {
+        Button buttonSignOut = dialog.findViewById(R.id.ButtonSignOut);
+        Button buttonCancel = dialog.findViewById(R.id.ButtonCancel);
+
+        buttonCancel.setOnClickListener(v -> {
             dialog.dismiss();
         });
 
-        dialogBinding.ButtonSignOut.setOnClickListener(v -> {
+        buttonSignOut.setOnClickListener(v -> {
             LogOut();
         });
 

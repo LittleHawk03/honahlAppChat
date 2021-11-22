@@ -176,7 +176,9 @@ public class activity_chat extends AppCompatActivity {
     /*Tao su kien khi nhan nut gui*/
     private void setListeners(){
         binding.imageBack2.setOnClickListener(v -> onBackPressed());
-        binding.buttonSend.setOnClickListener(v -> sendMessage());
+        if (binding.inputMess.getText().toString() != null){
+            binding.buttonSend.setOnClickListener(v -> sendMessage());
+        }
     }
 
     /*dinh danh ngay thang nam*/
