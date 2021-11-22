@@ -25,7 +25,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.auth.User;
+
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -55,11 +55,13 @@ public class activity_chat extends AppCompatActivity {
         binding = ActivityChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        dataInit();
+
         statusColor();
         setListeners();
         LoadReceiverDetail();
+        dataInit();
         listenMessage();
+
 
 
     }
