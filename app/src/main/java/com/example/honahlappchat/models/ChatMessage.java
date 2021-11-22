@@ -9,5 +9,10 @@ public class ChatMessage {
     public String dateTime;
     public Date dateObject;
 
+    // nhưng biến để trả về đoạn chat ban đâu
+    public String conversionId;
+    public String ConversionName;
+    public String ConversionImage;
+
 
 }
