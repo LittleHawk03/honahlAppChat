@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements ConversionListene
     private ActivityMainBinding binding;
     private PreferenceManager preferenceManager;
     private Dialog dialog;
-    private SignoutDialogBinding dialogBinding;
     private List<ChatMessage> Conversation;
     private RecentConversationAdapte conversationAdapte;
     private FirebaseFirestore database;
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements ConversionListene
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         getSupportActionBar().hide();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        dialogBinding = SignoutDialogBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         preferenceManager = new PreferenceManager(getApplicationContext());

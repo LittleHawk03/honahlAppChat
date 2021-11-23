@@ -27,14 +27,18 @@
         android:id="@+id/TextName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:ellipsize="end"
         android:textColor="@color/black"
-        android:textSize="@dimen/_18ssp"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ViewSuppoter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ViewSuppoter" />
+        app:layout_constraintStart_toEndOf="@+id/ViewSuppoter"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textRecentChat"
         android:layout_width="0dp"
