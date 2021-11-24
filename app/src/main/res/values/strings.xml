@@ -13,4 +13,7 @@
     <string name="sign_out">Sign out</string>
     <string name="cancel">cancel</string>
     <string name="are_you_sure_for_signing_out">Are you sure for signing out?</string>
+    <string name="online">Online</string>
+    <string name="errorUserNameSignIn">you need to enter your username</string>
+    <string name="username_or_email">username or email</string>
 </resources>

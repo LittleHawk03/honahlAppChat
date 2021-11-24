@@ -1,13 +1,10 @@
 package com.example.honahlappchat.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-
 import com.example.honahlappchat.Adapter.UserAdapter;
 import com.example.honahlappchat.Listener.Userlistener;
 import com.example.honahlappchat.R;
@@ -17,11 +14,11 @@ import com.example.honahlappchat.databinding.ActivityUserAcivityBinding;
 import com.example.honahlappchat.models.UsersM;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class userAcivity extends AppCompatActivity implements Userlistener {
+public class userAcivity extends BaseActivity implements Userlistener {
 
     private ActivityUserAcivityBinding binding;
     private PreferenceManager preferenceManager;
@@ -44,14 +41,7 @@ public class userAcivity extends AppCompatActivity implements Userlistener {
 
     private void statusColor()
     {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.MainStatus,this.getTheme()));
-        }
-        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-        {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.MainStatus,this.getTheme()));
-        }
+        getWindow().setStatusBarColor(getResources().getColor(R.color.MainStatus,this.getTheme()));
     }
 
 
@@ -59,11 +49,13 @@ public class userAcivity extends AppCompatActivity implements Userlistener {
         binding.ImageBack.setOnClickListener(v -> onBackPressed());
     }
 
-    //ham de load cac user ve
+
+
+    /**ham de load cac user ve*/
     private void loadUser(){
         Loading(true);
 
-        // ket noi voi realtime database cau firebasefirestore
+        /** ket noi voi realtime database cau firebasefirestore */
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         // mo colletion tren fire base
         database.collection(Constants.KEY_COLLECTION_USERS)
@@ -75,7 +67,7 @@ public class userAcivity extends AppCompatActivity implements Userlistener {
                    String currentId = preferenceManager.getString(Constants.KEY_USER_ID);
                    if (task.isSuccessful() && task.getResult() != null){
                        List<UsersM> users = new ArrayList<>();
-                       //lap de lay thong tin users ve nhung khong hieu ro cac dung cua task va query
+                       /** lap de lay thong tin users ve nhung khong hieu ro cac dung cua task va query */
                        for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()){
                            if (currentId.equals(queryDocumentSnapshot.getId())){
                                continue;
@@ -109,7 +101,7 @@ public class userAcivity extends AppCompatActivity implements Userlistener {
     }
 
 
-    //ProgessBar
+    /**ProgessBar*/
     private void Loading(Boolean beloading){
         if (beloading){
             binding.progressBar.setVisibility(View.VISIBLE);
@@ -118,6 +110,7 @@ public class userAcivity extends AppCompatActivity implements Userlistener {
         }
     }
 
+    /** su kien khi bam vao mot user se chuyen qua mot activity (activity_chat)*/
     @Override
     public void onUsetClicked(UsersM users) {
         Intent intent = new Intent(getApplicationContext(),activity_chat.class);

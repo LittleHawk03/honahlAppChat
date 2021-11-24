@@ -46,19 +46,28 @@
             android:text="@string/loginToContinue"
             android:textSize="@dimen/_13ssp"/>
 
+        <TextView
+            android:id="@+id/textErrorSignIn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:textColor="@color/red" />
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SignInInputLayout"
             style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:hint="username or email"
+            android:hint="@string/username_or_email"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
             app:boxCornerRadiusBottomStart="@dimen/_8sdp"
             app:boxCornerRadiusTopEnd="@dimen/_8sdp"
             app:boxCornerRadiusTopStart="@dimen/_8sdp"
             app:hintTextColor="@color/white"
             android:textColorHint="@color/white"
-            app:hintAnimationEnabled="true">
+            app:hintAnimationEnabled="true"
+            app:boxStrokeErrorColor="@color/red">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/SignInInputEmail"
@@ -70,12 +79,19 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
+        <TextView
+            android:id="@+id/textErrorSignIn2"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_10sdp"
+            android:textColor="@color/red"/>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SignInInputPassLayout"
             style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:layout_marginTop="@dimen/_15sdp"
-
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/white"
             app:boxCornerRadiusBottomEnd="@dimen/_8sdp"

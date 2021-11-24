@@ -1,7 +1,10 @@
 package com.example.honahlappchat.Activity;
 
+import static com.google.firebase.messaging.Constants.MessageNotificationKeys.TAG;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,19 +15,28 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
+
 import android.widget.Toast;
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
 import com.example.honahlappchat.databinding.ActivitySignUpBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
+
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -65,7 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
         binding.signInText.setOnClickListener(v -> onBackPressed());
         binding.SignUpButton.setOnClickListener(v -> {
             if (IsValidSignUpAccept()){
-                Register();
+                checkUserAndEmail();
             }
         });
         binding.layoutImage.setOnClickListener(v -> {
@@ -73,6 +85,34 @@ public class SignUpActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             pickImage.launch(intent);
         });
+    }
+
+
+    /**kiem tra xem user day co ton tai hay khong*/
+    private void checkUserAndEmail(){
+
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        CollectionReference UsersReference = database.collection(Constants.KEY_COLLECTION_USERS);
+        Query query = UsersReference.whereEqualTo(Constants.KEY_EMAIL,binding.InputEmail.getText().toString());
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (DocumentSnapshot documentSnapshot : task.getResult()){
+                        String user = documentSnapshot.getString(Constants.KEY_EMAIL);
+
+                        if (user.equals(binding.InputEmail.getText().toString())){
+                            Toast.makeText(getApplicationContext(),"UserName is exit", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+                if (task.getResult().size() == 0){
+                    Register();
+                }
+            }
+        });
+
+
     }
 
     private void Register(){
@@ -99,8 +139,6 @@ public class SignUpActivity extends AppCompatActivity {
                     loading(false);
                     showToast(exception.getMessage());
                 });
-
-
     }
 
     //dinh dang lai cai anh
@@ -139,7 +177,12 @@ public class SignUpActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
+
+
     private Boolean IsValidSignUpAccept(){
+
+
+
         if (encodeImage == null){
             showToast("select photo");
             return false;

@@ -35,8 +35,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
-public class activity_chat extends AppCompatActivity {
+public class activity_chat extends BaseActivity {
 
     private ActivityChatBinding binding;
     private UsersM receiverUsers;
@@ -45,6 +46,7 @@ public class activity_chat extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
     private String conversionId = null;
+    private Boolean beReceiverAvailable = false;
 
 
     @Override
@@ -114,6 +116,31 @@ public class activity_chat extends AppCompatActivity {
         binding.inputMess.setText(null);
     }
 
+    // de lay su kien availability cua mot user nao do co dan online hay khong
+    private void listenAvailabilityOfReceiver(){
+        database.collection(Constants.KEY_COLLECTION_USERS).document(
+                receiverUsers.id
+        ).addSnapshotListener(activity_chat.this, (value, error) -> {
+           if (error != null){
+               return;
+           }
+           if (value != null){
+               if (value.getLong(Constants.KEY_AVAILABILITY)  != null){
+                   int availability = Objects.requireNonNull(
+                           value.getLong(Constants.KEY_AVAILABILITY)
+                   ).intValue();
+                   beReceiverAvailable = availability == 1;
+               }
+               if (beReceiverAvailable){
+                   binding.textOnline.setVisibility(View.VISIBLE);
+               }else {
+                   binding.textOnline.setVisibility(View.GONE);
+               }
+           }
+        });
+    }
+
+    /** ham de lay su kien 2 chieu mot chieu nguoi nhan mot chieu la nguoi gui de day len firebase  */
     private void listenMessage() {
         database.collection(Constants.KEY_COLLECTION_CHAT)
                 .whereEqualTo(Constants.KEY_SENDER_ID,preferenceManager.getString(Constants.KEY_USER_ID))
@@ -125,6 +152,7 @@ public class activity_chat extends AppCompatActivity {
                 .addSnapshotListener(eventListener);
     }
 
+    /** tao recycle view cho chat them vao recycleView*/
     private final EventListener<QuerySnapshot> eventListener = (value, error) -> {
         if (error != null){
             return;
@@ -166,34 +194,32 @@ public class activity_chat extends AppCompatActivity {
         return BitmapFactory.decodeByteArray(bytes,0,bytes.length);
     }
 
-    /*chuyen anh tu ding dang String song kieu bitmap */
+    /** chuyen anh tu ding dang String song kieu bitmap */
     private void LoadReceiverDetail(){
         receiverUsers = (UsersM) getIntent().getSerializableExtra(Constants.KEY_USER);
         binding.textNameSend.setText(receiverUsers.name);
         binding.imageRecProfile.setImageBitmap(getBitmapFromString(receiverUsers.image));
     }
 
-    /*Tao su kien khi nhan nut gui*/
+    /**Tao su kien khi nhan nut gui*/
     private void setListeners(){
         binding.imageBack2.setOnClickListener(v -> onBackPressed());
-        if (binding.inputMess.getText().toString() != null){
-            binding.buttonSend.setOnClickListener(v -> sendMessage());
-        }
+        binding.buttonSend.setOnClickListener(v -> sendMessage());
     }
 
-    /*dinh danh ngay thang nam*/
+    /** dinh danh ngay thang nam*/
     private String getReadTime(Date date){
         return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
     }
 
-    // them conversion xem o ham sendMessage()
+    /**them conversion xem o ham sendMessage()*/
     private void addConversion(HashMap<String, Object> conversion){
         database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
                 .add(conversion)
                 .addOnSuccessListener(documentReference -> conversionId = documentReference.getId());
     }
 
-    // cap nhat 2 khoa tin nhan cuoi va thoi gian len database (collection)
+    /**cap nhat 2 khoa tin nhan cuoi va thoi gian len database (collection)*/
     private void updateConversion(String message){
         DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
                 .document(conversionId);
@@ -203,7 +229,7 @@ public class activity_chat extends AppCompatActivity {
         );
     }
 
-    // neu conversion co gia tri la null no se gui xuong ham nay
+    /** neu conversion co gia tri la null no se gui xuong ham nay */
     private void checkForConversion(){
         if (chatMessages.size() != 0){
             checkForConversionRemotely(
@@ -232,4 +258,11 @@ public class activity_chat extends AppCompatActivity {
         }
     };
 
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenAvailabilityOfReceiver();
+    }
 }

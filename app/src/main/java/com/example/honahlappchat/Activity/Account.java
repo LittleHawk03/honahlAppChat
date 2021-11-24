@@ -23,7 +23,7 @@ import com.example.honahlappchat.databinding.ActivityAccountBinding;
 
 
 
-public class Account extends AppCompatActivity {
+public class Account extends BaseActivity {
 
     private ActivityAccountBinding binding;
     private PreferenceManager preferenceManager;

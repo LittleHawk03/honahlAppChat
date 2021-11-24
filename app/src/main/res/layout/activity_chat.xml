@@ -90,6 +90,20 @@
         app:layout_constraintBottom_toBottomOf="@+id/ViewBackGround"
         app:layout_constraintTop_toBottomOf="@+id/imageBack2"/>
 
+    <TextView
+        android:id="@+id/textOnline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/ViewSuppoterRecycle"
+        android:background="@color/green"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        android:padding="@dimen/_2sdp"
+        android:visibility="gone"
+        android:text="@string/online"
+        android:gravity="center"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"

@@ -55,7 +55,7 @@ public class SignInActivity extends AppCompatActivity {
         {
             getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
         }
-        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
         {
             getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
         }
@@ -92,24 +92,23 @@ public class SignInActivity extends AppCompatActivity {
                         startActivity(intent);
                     }else {
                         loading(false);
-                        showToast("cant sign in");
+                        binding.textErrorSignIn1.setText("your username or password is incorrect");
                     }
 
                 });
     }
 
-    private void showToast(String message){
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
 
     private Boolean IsValidSignInAccept(){
        if (binding.SignInInputEmail.getText().toString().trim().isEmpty()){
-           showToast("Name cant be empty");
+           binding.textErrorSignIn1.setText("You need to enter your username or email");
            return false;
        }else if (binding.SignInInputPass.getText().toString().trim().isEmpty()){
-           showToast("password cant be empty");
+           binding.textErrorSignIn2.setText("You need to enter your password");
            return false;
        }else{
+           binding.textErrorSignIn1.setText(null);
+           binding.textErrorSignIn2.setText(null);
            return true;
        }
 
