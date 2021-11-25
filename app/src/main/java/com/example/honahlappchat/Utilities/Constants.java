@@ -1,5 +1,7 @@
 package com.example.honahlappchat.Utilities;
 
+import java.util.HashMap;
+
 public class Constants {
     public static final String KEY_COLLECTION_USERS = "users";
     public static final String KEY_NAME = "name";
@@ -23,5 +25,35 @@ public class Constants {
     public static final String KEY_RECEIVER_IMAGE = "receiverImage";
     public static final String KEY_LAST_MESSAGE = "lastMessage";
     public static final String KEY_AVAILABILITY = "availability";
+
+    /**key su uy quyen tu xa*/
+    public static final String REMOTE_MSG_AUTHORIZATION = "Authorization";
+    /**key kieu du lieu tin nhan */
+    public static final String REMOTE_MSG_CONTENT_TYPE = "Content-Type";
+
+    public static final String REMOTE_MSG_DATA = "data";
+
+    /** mot key de dang ky ids */
+    public static final String REMOTE_MSG_REGISTRATION_IDS = "registration_ids";
+
+
+    public static HashMap<String, String> remoteMsgHeaders = null;
+    public static HashMap<String, String> getRemoteMsgHeaders(){
+        if (remoteMsgHeaders == null){
+            remoteMsgHeaders = new HashMap<>();
+            remoteMsgHeaders.put(
+                    REMOTE_MSG_AUTHORIZATION,
+                    "key=AAAAVqep3-k:APA91bHDABSh0RA8izeIiJPzHAzLJhoKg4PcVvU2-WG92FL9PuPpEPKgRwFTEmr_ACCIn3k5aD1ejZn6UGXWlI49WZAq576N6vA2dND57n1SBGanANgM2Je5XF29U804ao1o1DkWzKvJ"
+            );
+            remoteMsgHeaders.put(
+                    REMOTE_MSG_CONTENT_TYPE,
+                    "application/json"
+            );
+        }
+        return remoteMsgHeaders;
+    }
+
+
+
 
 }

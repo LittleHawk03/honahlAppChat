@@ -1,5 +1,6 @@
 package com.example.honahlappchat.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
@@ -9,9 +10,12 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.example.honahlappchat.Adapter.ChatAdapter;
 
+import com.example.honahlappchat.NetWork.ApiClient;
+import com.example.honahlappchat.NetWork.ApiService;
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
 import com.example.honahlappchat.Utilities.PreferenceManager;
@@ -27,6 +31,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,6 +44,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class activity_chat extends BaseActivity {
 
@@ -105,7 +117,6 @@ public class activity_chat extends BaseActivity {
             HashMap<String, Object> conversion = new HashMap<>();
             conversion.put(Constants.KEY_SENDER_ID,preferenceManager.getString(Constants.KEY_USER_ID));
             conversion.put(Constants.KEY_SENDER_NAME,preferenceManager.getString(Constants.KEY_NAME));
-            conversion.put(Constants.KEY_SENDER_IMAGE,preferenceManager.getString(Constants.KEY_IMAGE));
             conversion.put(Constants.KEY_RECEIVER_ID,receiverUsers.id);
             conversion.put(Constants.KEY_RECEIVER_NAME,receiverUsers.name);
             conversion.put(Constants.KEY_RECEIVER_IMAGE,receiverUsers.image);
@@ -113,10 +124,72 @@ public class activity_chat extends BaseActivity {
             conversion.put(Constants.KEY_TIMESTAMP,new Date());
             addConversion(conversion);
         }
+
+
+        /** lay tren mang gan nhu la khong hieu gi*/
+        if (!beReceiverAvailable){
+            try{
+                JSONArray tokens = new JSONArray();
+                tokens.put(receiverUsers.token);
+
+                JSONObject data = new JSONObject();
+                data.put(Constants.KEY_USER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
+                data.put(Constants.KEY_NAME, preferenceManager.getString(Constants.KEY_NAME));
+                data.put(Constants.KEY_FCM_TOKEN, preferenceManager.getString(Constants.KEY_FCM_TOKEN));
+                data.put(Constants.KEY_MESSAGE, binding.inputMess.getText().toString());
+
+                JSONObject body = new JSONObject();
+                body.put(Constants.REMOTE_MSG_DATA, data);
+                body.put(Constants.REMOTE_MSG_REGISTRATION_IDS, tokens);
+                sendNotification(body.toString());
+            } catch (Exception exception){
+                showToast(exception.getMessage());
+            }
+        }
         binding.inputMess.setText(null);
     }
 
-    // de lay su kien availability cua mot user nao do co dan online hay khong
+    private void showToast(String message){
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    /** phan gui thong bao sieu kho hieu no se bao gom ca API (ApiClient trong package NetWork) */
+    private void sendNotification(String messageBody){
+        ApiClient.getClient().create(ApiService.class).sendMessage(
+                Constants.getRemoteMsgHeaders(),messageBody
+        ).enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(@NonNull Call<String> call,@NonNull Response<String> response) {
+                if (response.isSuccessful()){
+                    try {
+                        if (response.body() != null){
+                            JSONObject responseJson = new JSONObject(response.body());
+                            JSONArray results = responseJson.getJSONArray("results");
+                            if (responseJson.getInt("failure") == 1){
+                                JSONObject error = (JSONObject) results.get(0);
+                                showToast(error.getString("error"));
+                                return;
+                            }
+                        }
+                    }catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                    showToast("Notification is successful");
+                }else {
+                    showToast("error: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure( @NonNull  Call<String> call,@NonNull Throwable t) {
+                showToast(t.getMessage());
+            }
+        });
+
+
+    }
+
+    /**de lay su kien availability cua mot user nao do co dan online hay khong*/
     private void listenAvailabilityOfReceiver(){
         database.collection(Constants.KEY_COLLECTION_USERS).document(
                 receiverUsers.id
@@ -131,12 +204,18 @@ public class activity_chat extends BaseActivity {
                    ).intValue();
                    beReceiverAvailable = availability == 1;
                }
-               if (beReceiverAvailable){
-                   binding.textOnline.setVisibility(View.VISIBLE);
-               }else {
-                   binding.textOnline.setVisibility(View.GONE);
+               receiverUsers.token = value.getString(Constants.KEY_FCM_TOKEN);
+               if (receiverUsers.image == null){
+                   receiverUsers.image = value.getString(Constants.KEY_IMAGE);
+                   chatAdapter.setRecivedBitmap(getBitmapFromString(receiverUsers.image));
+                   chatAdapter.notifyItemRangeChanged(0,chatMessages.size());
                }
            }
+            if (beReceiverAvailable){
+                binding.textOnline.setVisibility(View.VISIBLE);
+            }else {
+                binding.textOnline.setVisibility(View.GONE);
+            }
         });
     }
 
@@ -190,8 +269,13 @@ public class activity_chat extends BaseActivity {
 
 
     private Bitmap getBitmapFromString(String encodedImage){
-        byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+        if (encodedImage != null){
+            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+        }else {
+            return null;
+        }
+
     }
 
     /** chuyen anh tu ding dang String song kieu bitmap */

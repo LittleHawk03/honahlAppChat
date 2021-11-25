@@ -55,6 +55,8 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
@@ -149,13 +151,108 @@
         android:background="@color/darkGrey"/>
 
     <FrameLayout
+        android:id="@+id/NameFrame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_account"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            android:textSize="@dimen/_15sdp"
+            android:text="Your Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </FrameLayout>
+
+    <View
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"/>
+
+
+    <FrameLayout
+        android:id="@+id/AccountFrame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_email"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            android:textSize="@dimen/_15sdp"
+            android:text="@string/username_or_email"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </FrameLayout>
+
+    <View
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"/>
+
+    <FrameLayout
+        android:id="@+id/PassChangeFrame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_lock"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+
+    </FrameLayout>
+
+
+    <View
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"/>
+
+    <FrameLayout
         android:id="@+id/SignOutFrame"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_4sdp"
         android:outlineAmbientShadowColor="@color/black">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
@@ -173,5 +270,13 @@
             android:textStyle="bold"/>
 
     </FrameLayout>
+
+    <View
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"/>
+
+
 
 </LinearLayout>

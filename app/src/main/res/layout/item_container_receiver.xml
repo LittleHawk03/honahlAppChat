@@ -27,7 +27,7 @@
         android:paddingBottom="@dimen/_8sdp"
         android:paddingEnd="@dimen/_12sdp"
         app:layout_constraintWidth_max="wrap"
-        android:background="@drawable/shap_for_reciving"
+        android:background="@drawable/shape_for_reciving"
         android:textColor="@color/black"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintStart_toEndOf="@+id/imageForProfile"
