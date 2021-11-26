@@ -27,6 +27,7 @@
             android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:tint="@color/black"/>
 
         <View
@@ -49,12 +50,10 @@
             app:layout_constraintBottom_toBottomOf="@+id/ViewSuppoter2"
             app:layout_constraintStart_toEndOf="@+id/ViewSuppoter2"
             app:layout_constraintTop_toTopOf="@+id/ViewSuppoter2"
-            app:layout_constraintVertical_bias="0.6"
             app:layout_goneMarginEnd="@dimen/_8sdp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     <View
@@ -98,7 +97,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_10sdp"
             android:text="@string/name"
-            android:textColor="@color/black"
+
             android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ViewSuppoterPicture"
@@ -124,7 +123,6 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:textSize="@dimen/_12ssp"
             android:text="@string/username"
-            android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ViewSuppoterPicture"
             app:layout_constraintTop_toBottomOf="@+id/textNameSuppoter"
@@ -144,138 +142,136 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:layout_marginTop="@dimen/_2sdp"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkGrey"/>
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_10sdp"
+        android:textStyle="bold"
+        android:text="@string/account"/>
+
 
     <FrameLayout
-        android:id="@+id/NameFrame"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_4sdp">
+            android:id="@+id/NameFrame"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:src="@drawable/ic_account"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_account"
+                app:tint="@color/blue"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/_60sdp"
-            android:textSize="@dimen/_15sdp"
-            android:text="Your Name"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_60sdp"
+                android:textSize="@dimen/_15sdp"
+                android:text="@string/your_name"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
     </FrameLayout>
 
-    <View
-        android:layout_marginTop="@dimen/_2sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkGrey"/>
 
 
     <FrameLayout
-        android:id="@+id/AccountFrame"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_4sdp">
+            android:id="@+id/AccountFrame"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_10sdp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:src="@drawable/ic_email"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_email"
+                app:tint="@color/blue"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/_60sdp"
-            android:textSize="@dimen/_15sdp"
-            android:text="@string/username_or_email"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_60sdp"
+                android:textSize="@dimen/_15sdp"
+                android:text="@string/username_or_email"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
     </FrameLayout>
 
-    <View
-        android:layout_marginTop="@dimen/_2sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkGrey"/>
+
 
     <FrameLayout
-        android:id="@+id/PassChangeFrame"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_4sdp">
+            android:id="@+id/PassChangeFrame"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_8sdp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_lock"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_lock"
+                app:tint="@color/blue"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/_60sdp"
-            android:textSize="@dimen/_15sdp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_60sdp"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
 
     </FrameLayout>
 
 
-    <View
-        android:layout_marginTop="@dimen/_2sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkGrey"/>
+
 
     <FrameLayout
-        android:id="@+id/SignOutFrame"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_4sdp"
-        android:outlineAmbientShadowColor="@color/black">
+            android:id="@+id/SignOutFrame"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:outlineAmbientShadowColor="@color/black">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_baseline_power_settings_new_24" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_power"
+                app:tint="@color/blue"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/SignOut"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="@dimen/_60sdp"
-            android:textSize="@dimen/_15sdp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SignOut"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_60sdp"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
 
     </FrameLayout>
 
-    <View
-        android:layout_marginTop="@dimen/_2sdp"
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkGrey"/>
+        android:layout_height="wrap_content"
+        android:src="@drawable/picture_decor_account"
+        android:contentDescription="@string/image_description" />
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 package com.example.honahlappchat.Activity;
 
-import static com.google.firebase.messaging.Constants.MessageNotificationKeys.TAG;
+
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -15,7 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
@@ -102,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity {
                         String user = documentSnapshot.getString(Constants.KEY_EMAIL);
 
                         if (user.equals(binding.InputEmail.getText().toString())){
-                            Toast.makeText(getApplicationContext(),"UserName is exit", Toast.LENGTH_LONG).show();
+                            binding.textErrorUserName.setText("UserName is exit");
                         }
                     }
                 }
@@ -185,22 +184,28 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (encodeImage == null){
             showToast("select photo");
+            binding.textErrorPictureAndName.setText("select photo");
             return false;
         } else if (binding.RegisterInputName.getText().toString().trim().isEmpty()){
             showToast("Name cant be empty");
+            binding.textErrorPictureAndName.setText("Name cant be empty");
             return false;
         }else if (binding.InputEmail.getText().toString().trim().isEmpty()){
             showToast("Email or username cant be empty ");
+            binding.textErrorUserName.setText("Email or username cant be empty ");
             return false;
         }else if (binding.InputPassWord.getText().toString().trim().isEmpty()){
             showToast("password cant be empty ");
+            binding.textErrorPassword.setText("password cant be empty ");
             return false;
         }else if(binding.InputConfirmPassWord.getText().toString().trim().isEmpty()){
             showToast("you must confirm your password ");
+            binding.textErrorConfirmPass.setText("you must confirm your password ");
             return false;
-//        }else if (binding.InputPassWord.getText().toString().trim().equals(binding.InputConfirmPassWord.getText().toString())){
-//            showToast(" confirm password is incorrect ");
-//            return false;
+        }else if (!binding.InputPassWord.getText().toString().equals(binding.InputConfirmPassWord.getText().toString())){
+            showToast(" confirm password is incorrect ");
+            binding.textErrorConfirmPass.setText("confirm password is incorrect");
+            return false;
         }else {
 
             return true;

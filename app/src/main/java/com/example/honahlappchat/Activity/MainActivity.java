@@ -60,13 +60,19 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         dialog = new Dialog(this);
 
         initData();
-        LoadProfile();
+
         statusColor();
         SetListeners();
         getToken();
         listenConversation();
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LoadProfile();
     }
 
     @Override
@@ -82,7 +88,7 @@ public class MainActivity extends BaseActivity implements ConversionListener {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),Account.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });

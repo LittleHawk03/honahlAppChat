@@ -3,12 +3,9 @@ package com.example.honahlappchat.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.example.honahlappchat.R;
 import com.example.honahlappchat.Utilities.Constants;
@@ -51,14 +48,7 @@ public class SignInActivity extends AppCompatActivity {
 
      private void statusColor()
     {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
-        }
-        else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-        {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
-        }
+        getWindow().setStatusBarColor(getResources().getColor(R.color.blue,this.getTheme()));
     }
 
     private void SetListeners() {

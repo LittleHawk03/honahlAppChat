@@ -29,10 +29,15 @@
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_account.xml" value="0.17" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_chat.xml" value="0.20390625" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_manager_name.xml" value="0.18" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_manager_password.xml" value="0.18" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_manager_username.xml" value="0.17" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_messaging_service.xml" value="0.15300546448087432" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_sign_in.xml" value="0.22" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_sign_up.xml" value="0.18" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/activity_user_acivity.xml" value="0.18" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/fragment_acount.xml" value="0.1361111111111111" />
+        <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/fragment_name.xml" value="0.1361111111111111" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/item_container_receiver.xml" value="0.18194444444444444" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/item_container_sendchat.xml" value="0.18194444444444444" />
         <entry key="..\:/androidx/HonahlAppChat2/app/src/main/res/layout/item_recent_chat.xml" value="0.21" />
